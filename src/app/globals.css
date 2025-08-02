@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+/* Root color variables */
+:root {
+  --primary: #f81c1c;
+  --secondary: #3bd415;
+  --text: #1d1c1c;
+  --background: #fdf7f7;
+  --card-bg: #c0e8ff;
+  --accent: #ff00ff;
+  --grid-color: rgba(112, 52, 52, 0.1);
+}
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-expand {
+  animation: expand 1.5s ease-out forwards;
+}
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Base reset and font */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 2px solid black;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-bg);
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-bg) var(--background);
+}
+
+/* Text selection */
+::selection {
+  background: var(--card-bg);
+  color: black;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Grid background with fade */
+.hero-background {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      var(--grid-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  z-index: -1;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Grain effect */
+/* .grain {
+  position: fixed;
+  top: -150%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.15;
+  animation: grain 8s steps(10) infinite;
+  z-index: 100;
+}
+
+
+
+
+
+
+.heading {
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.heading-highlight {
+  background: var(--card-bg);
+  color: var(--text);
+  font-weight: 900;
+  padding: 0.2em 0.4em;
+  margin: 0.2em 0.1em;
+  border: 2px solid var(--text);
+  display: inline-block;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+}
+
+.subheading {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.4;
+}
+.cta-container {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+  z-index: 2;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+} */
+
+.cta-primary {
+  background: var(--primary);
+  color: white;
+  padding: .5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.cta-secondary {
+  background: var(--card-bg);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  animation: shake 2.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.hero-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
+.shape {
+  position: absolute;
+  background: var(--accent);
+  border: 2px solid #000;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+  background: var(--card-bg);
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  transform: rotate(45deg);
+  top: 60%;
+  right: 15%;
+  background: var(--secondary);
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 20%;
+  background: var(--primary);
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* styles/globals.css */
+
+.project-card {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-card .tech-tag {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+  .project-card {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.5rem;
+  }
+}
+@layer utilities {
+  .animate-text-shine {
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+}

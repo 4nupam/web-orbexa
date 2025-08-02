@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Portfolio Website",
+    "desc": "A personal portfolio website to showcase my work, skills, and contact details.",
+    "images": [
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg",
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg",
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg"
+    ],
+    "type": "web",
+    "techStack": ["React", "Tailwind CSS", "Framer Motion"],
+    "github": "https://github.com/yourusername/portfolio-website",
+    "liveDemo": "https://yourportfolio.com"
+  },
+  {
+    "name": "E-Commerce App",
+    "desc": "A fully responsive Progressive Web App (PWA) for online shopping with cart and payment integration.",
+    "images": ["https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg",
+     "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg", 
+     "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg"],
+    "type": "pwa",
+    "techStack": ["React", "Redux", "Node.js", "MongoDB"],
+    "github": "https://github.com/yourusername/ecommerce-pwa",
+    "liveDemo": "https://ecommerce-demo.com"
+  },
+  {
+    "name": "UI Design System",
+    "desc": "A complete design system including reusable components, style guides, and layouts built in Figma.",
+    "images": ["https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg", "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg"],
+    "type": "designing",
+    "techStack": ["Figma", "Design Tokens"],
+    "github": "https://github.com/yourusername/ui-design-system",
+    "liveDemo": "https://www.figma.com/file/xyz/UI-Design-System"
+  },
+  {
+    "name": "Fitness Tracker App",
+    "desc": "A cross-platform mobile app to track workouts, monitor progress, and set fitness goals.",
+    "images": [
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg",
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg",
+      "https://images.pexels.com/photos/25539491/pexels-photo-25539491.jpeg"
+    ],
+    "type": "app",
+    "techStack": ["React Native", "Firebase", "Expo"],
+    "github": "https://github.com/yourusername/fitness-tracker-app",
+    "liveDemo": "https://fitnessapp-demo.com"
+  }
+]
